@@ -4,20 +4,20 @@
   "description": "System Test Task: E-commerce Campaign Reporting API with JWT Authentication. This project includes features like file upload, JWT-based authentication, and APIs for reporting campaign performance based on product data.",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
-  "keywords": [],
-  "author": "",
+  "author": "bharath.kumar.m.g",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "5.1.1",
     "bcryptjs": "2.4.3",
-    "csv-parser": "^3.0.0",
+    "csv-parser": "3.0.0",
     "dotenv": "16.4.5",
-    "express": "^4.21.1",
-    "formidable": "^3.5.2",
+    "express": "4.21.1",
+    "express-validator": "7.2.0",
+    "formidable": "3.5.2",
     "fs": "0.0.1-security",
+    "helmet": "8.0.0",
     "jsonwebtoken": "9.0.2",
     "multer": "1.4.5-lts.1",
     "sqlite3": "5.1.7"

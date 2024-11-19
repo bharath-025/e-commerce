@@ -1,0 +1,387 @@
+{
+	"info": {
+		"_postman_id": "3dd3e70e-be08-4e45-989a-aeee216ff776",
+		"name": "e-commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39856727"
+	},
+	"item": [
+		{
+			"name": "users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJiaGFyYXRoLmt1bWFyIiwiaWF0IjoxNzMyMDQwNTUzLCJleHAiOjE3MzIwNDQxNTN9.fyz83qX1VTtUUmielt-T9GlETeVdEUR8SO-ZUcSSsjY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"techhhhh\",\r\n  \"password\": \"Welcome1\",\r\n  \"email\": \"technology@gmail.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJiYXJnYXZfcmVkZHkiLCJpYXQiOjE3MzE5NjA0NDIsImV4cCI6MTczMTk2NDA0Mn0.4fkueGWHeAJjLGLTVcG9hXEL5AvLb3S9MKiyEhPe-sk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"bharath.kumar\",\r\n  \"password\": \"Welcome1\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/auth/users/6",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJiaGFyYXRoLmt1bWFyIiwiaWF0IjoxNzMyMDQwNzczLCJleHAiOjE3MzIwNDQzNzN9.431UBdv8NgPRvKreIYeaanp3zVJQmWcYnasusxNfjM8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/auth/users/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"users",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/auth/users/7",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJiaGFyYXRoLmt1bWFyIiwiaWF0IjoxNzMyMDQwNzczLCJleHAiOjE3MzIwNDQzNzN9.431UBdv8NgPRvKreIYeaanp3zVJQmWcYnasusxNfjM8"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/auth/users/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"users",
+						"7"
+					]
+				},
+				"description": "Generated from cURL: curl --location 'http://localhost:3000/api/auth/users/7' \\\r\n--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJiaGFyYXRoLmt1bWFyIiwiaWF0IjoxNzMyMDQwNzczLCJleHAiOjE3MzIwNDQzNzN9.431UBdv8NgPRvKreIYeaanp3zVJQmWcYnasusxNfjM8'"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/auth/users/7",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJiaGFyYXRoLmt1bWFyIiwiaWF0IjoxNzMyMDQwNzczLCJleHAiOjE3MzIwNDQzNzN9.431UBdv8NgPRvKreIYeaanp3zVJQmWcYnasusxNfjM8"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/auth/users/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"users",
+						"7"
+					]
+				},
+				"description": "Generated from cURL: curl --location 'http://localhost:3000/api/auth/users/7' \\\r\n--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJiaGFyYXRoLmt1bWFyIiwiaWF0IjoxNzMyMDQwNzczLCJleHAiOjE3MzIwNDQzNzN9.431UBdv8NgPRvKreIYeaanp3zVJQmWcYnasusxNfjM8'"
+			},
+			"response": []
+		},
+		{
+			"name": "upload-csv",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJiaGFyYXRoLmt1bWFyIiwiaWF0IjoxNzMyMDMwNjQ3LCJleHAiOjE3MzIwMzQyNDd9.Lsn_zE6a3U54CfD_Dr0yoyn-beu9-mx9wzitQ17Kvdg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/Bharath/GIT/e-commerce/uploads/upload.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/upload-csv",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"upload-csv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "campaign",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJiaGFyYXRoLmt1bWFyLm0uZyIsImlhdCI6MTczMjA0MDA2NywiZXhwIjoxNzMyMDQzNjY3fQ.7FPI9ZjpIM-8UuJ3ARsbLaq9OIbijPSH3hotpJxM2RQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJiaGFyYXRoLmt1bWFyIiwiaWF0IjoxNzMyMDQwNTUzLCJleHAiOjE3MzIwNDQxNTN9.fyz83qX1VTtUUmielt-T9GlETeVdEUR8SO-ZUcSSsjY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fsn_id\": \"FSN3452\",\r\n    \"campaign_name\": \"Diamond-Mansi\",\r\n    \"ad_group_id\": \"AG32\",\r\n    \"product_name\": \"Product_14\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/products/report/campaign",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"report",
+						"campaign"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adGroupID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJiaGFyYXRoLmt1bWFyIiwiaWF0IjoxNzMyMDQwNTUzLCJleHAiOjE3MzIwNDQxNTN9.fyz83qX1VTtUUmielt-T9GlETeVdEUR8SO-ZUcSSsjY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ad_group_id\": \"AG32\",\r\n    \"campaign_name\": \"Diamond-Mansi\",\r\n    \"fsn_id\": \"FSN3452\",\r\n    \"product_name\": \"Product_14\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/products/report/adGroupID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"report",
+						"adGroupID"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fsnID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJiaGFyYXRoLmt1bWFyIiwiaWF0IjoxNzMyMDQwNTUzLCJleHAiOjE3MzIwNDQxNTN9.fyz83qX1VTtUUmielt-T9GlETeVdEUR8SO-ZUcSSsjY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fsn_id\": \"FSN3452\",\r\n    \"campaign_name\": \"Diamond-Mansi\",\r\n    \"ad_group_id\": \"AG32\",\r\n    \"product_name\": \"Product_14\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/products/report/fsnID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"report",
+						"fsnID"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "productName",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJiaGFyYXRoLmt1bWFyIiwiaWF0IjoxNzMyMDQwNTUzLCJleHAiOjE3MzIwNDQxNTN9.fyz83qX1VTtUUmielt-T9GlETeVdEUR8SO-ZUcSSsjY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product_name\": \"Product_14\",\r\n    \"campaign_name\": \"Diamond-Mansi\",\r\n    \"ad_group_id\": \"AG32\",\r\n    \"fsn_id\": \"FSN3452\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/products/report/productName",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"report",
+						"productName"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
