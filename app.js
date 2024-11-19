@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
 app.use('/api/auth', authRoutes);
-app.use('/api/products', productRoutes);
+app.use('/api', productRoutes);
 // Start the server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
