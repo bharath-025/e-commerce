@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const multer = require('multer');
+const csv = require('csv-parser');
+const Product = require('../models/productModel'); // Assuming this is the correct path
 
 // Setup file upload using multer
 const uploadDir = path.join(__dirname, '..', 'uploads');
@@ -33,9 +35,27 @@ const uploadCSV = (req, res) => {
   }
 
   const filePath = path.join(__dirname, '..', 'uploads', file.originalname);
-  fs.renameSync(file.path, filePath);  // Ensure the file is moved to the correct location
+  fs.renameSync(file.path, filePath); // Ensure the file is moved to the correct location
 
-  return res.status(200).send('CSV file uploaded successfully');
+  // Read and parse the CSV file
+  const results = [];
+  fs.createReadStream(filePath)
+    .pipe(csv())
+    .on('data', (data) => results.push(data)) // Push each row into results array
+    .on('end', () => {
+      // Now insert the CSV data into the database
+      Product.insertMany(results, (err) => {
+        if (err) {
+          console.error('Error inserting data into DB:', err);
+          return res.status(500).send('Error inserting data into database');
+        }
+        return res.status(200).send('CSV file uploaded and data inserted into DB successfully');
+      });
+    })
+    .on('error', (err) => {
+      console.error('Error reading CSV file:', err);
+      return res.status(500).send('Error processing the CSV file');
+    });
 };
 
 module.exports = { uploadCSV, upload };
