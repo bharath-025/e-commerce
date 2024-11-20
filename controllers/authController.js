@@ -2,7 +2,6 @@ const db = require("../config/database");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-// Helper function to send standardized error responses
 const handleError = (res, message, status = 400, error = null) => {
   if (error) console.error(message, error);
   res.status(status).json({ success: false, message });

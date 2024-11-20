@@ -4,7 +4,6 @@ const multer = require("multer");
 const csv = require("csv-parser");
 const Product = require("../models/productModel");
 
-// Setup file upload using multer
 const uploadDir = path.join(__dirname, '..', 'uploads');
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -37,7 +36,6 @@ const uploadCSV = (req, res) => {
   const filePath = path.join(__dirname, '..', 'uploads', file.originalname);
   fs.renameSync(file.path, filePath);
 
-  // Read and parse the CSV file
   const results = [];
   fs.createReadStream(filePath)
     .pipe(csv())
@@ -57,19 +55,6 @@ const uploadCSV = (req, res) => {
     });
 };
 
-const paginate = (data, page, limit) => {
-  const offset = (page - 1) * limit;
-  const paginatedData = data.slice(offset, offset + limit);
-  return {
-    data: paginatedData,
-    currentPage: page,
-    totalPages: Math.ceil(data.length / limit),
-    totalItems: data.length,
-  };
-};
-
-
-// Dynamic SQL query builder
 const buildQuery = (filters) => {
   let query = "SELECT * FROM products WHERE 1=1";
   const queryParams = [];
@@ -87,7 +72,6 @@ const buildQuery = (filters) => {
     }
   });
 
-  // Pagination
   const limit = parseInt(filters.limit, 10) || 10;
   const offset = parseInt(filters.offset, 10) || 0;
   query += ` LIMIT ? OFFSET ?`;
@@ -97,9 +81,8 @@ const buildQuery = (filters) => {
 };
 
 
-// Generate report with filtering
 const generateReport = (req, res, filterFields) => {
-  const filters = req.query; // Filters from query params
+  const filters = req.query;
   const { query, queryParams } = buildQuery(filters);
 
   Product.filterBy(query, queryParams, (err, result) => {
@@ -114,7 +97,6 @@ const generateReport = (req, res, filterFields) => {
 
     const mainKey = filterFields[0];
 
-    // Aggregate and calculate data by the main key
     const aggregatedData = result.reduce((acc, row) => {
       const key = row[mainKey];
 
@@ -129,7 +111,6 @@ const generateReport = (req, res, filterFields) => {
         };
       }
 
-      // Aggregate values
       const current = acc[key];
       current.AdSpend += parseFloat(row.ad_spend) || 0;
       current.Views += parseInt(row.views, 10) || 0;
@@ -142,7 +123,6 @@ const generateReport = (req, res, filterFields) => {
       return acc;
     }, {});
 
-    // Calculate additional metrics (e.g., CTR, ROAS)
     const responseData = Object.values(aggregatedData).map((item) => {
       const ctr = item.Views > 0 ? (item.Clicks / item.Views) * 100 : 0;
       const roas = item.AdSpend > 0 ? item.TotalRevenue / item.AdSpend : 0;
